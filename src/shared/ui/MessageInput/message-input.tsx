@@ -45,10 +45,6 @@ export const MessageInput = ({
 
   const isDisabled = disabled || !hasValue
 
-  useEffect(() => {
-  console.log('disabled prop:', disabled, 'hasValue:', hasValue, 'isDisabled:', Boolean(disabled) || !hasValue)
-}, [disabled, hasValue])
-
   return (
     <div className={styles.container}>
       <textarea
