@@ -1,6 +1,7 @@
 # 📱 Chat Application
 
 Современное веб-приложение для обмена сообщениями, построенное на React с использованием Feature-Sliced Design.
+
 С использованием сервиса GREEN-API `https://green-api.com/`
 
 ## 📋 Требования
