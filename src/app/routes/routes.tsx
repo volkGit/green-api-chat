@@ -9,7 +9,7 @@ import {
 import { ROUTE_PATHS } from './paths'
 import { MainPage } from '@/pages/MainPage'
 import { AuthPage } from '@/pages/AuthPage'
-import { useMainStore } from '@/entities/max/model/store'
+import { useMainStore } from '@/entities/chat/model/store'
 
 
 const RequireAuth = () => {

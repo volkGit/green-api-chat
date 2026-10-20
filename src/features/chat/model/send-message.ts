@@ -1,4 +1,4 @@
-import { useMainStore } from '@/entities/max/model/store'
+import { useMainStore } from '@/entities/chat/model/store'
 import type { ResponseMessage } from './types'
 import { BASE_URL } from '@/shared/api/base-url'
 

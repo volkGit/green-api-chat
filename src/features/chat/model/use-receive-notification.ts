@@ -1,9 +1,9 @@
 import { useQuery } from '@tanstack/react-query'
-import { useMainStore } from '@/entities/max/model/store'
+import { useMainStore } from '@/entities/chat/model/store'
 import type { ReceiveNotification } from './types'
 import { BASE_URL } from '@/shared/api/base-url'
 
-export const useReceiveNotification = () => {
+export const useReceiveNotification = (enabled: boolean) => {
   const authData = useMainStore.getState().authData
 
   return useQuery({
@@ -16,7 +16,7 @@ export const useReceiveNotification = () => {
     staleTime: 0,
     gcTime: 0,
     retry: true,
-    enabled: true,
+    enabled,
     refetchInterval: 6000,
   })
 }

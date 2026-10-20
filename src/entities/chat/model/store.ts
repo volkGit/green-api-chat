@@ -2,7 +2,7 @@ import { create } from 'zustand'
 import { persist } from 'zustand/middleware'
 import { immer } from 'zustand/middleware/immer'
 import { devtools } from 'zustand/middleware'
-import type { ChatMessage, MainStore } from './types'
+import type { ChatMessage, MainStore, ChatData } from './types'
 
 export const useMainStore = create<MainStore>()(
   devtools(
@@ -17,6 +17,14 @@ export const useMainStore = create<MainStore>()(
                 ...(state.chatMessages?.[chatId] || []),
                 message,
               ],
+            }
+          }
+        )),
+         setLastMessage: (chatId: string, message: ChatData) => set((state) => (
+          {
+            lastMessageData: {
+              ...state.lastMessageData,
+              [chatId]: message,
             }
           }
         ))

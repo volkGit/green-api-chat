@@ -13,7 +13,7 @@ type ChatMessages = {
   [key: string]: ChatMessage[]
 }
 
-type ChatData = {
+export type ChatData = {
   name: string
   lastMessageTime: string
   lastMessage: string
@@ -34,4 +34,5 @@ type StoreMax = {
 export type MainStore = StoreMax & {
   updateStore: (arg: Partial<StoreMax> | ((state: MainStore) => void)) => void
   addMessage: (chatId: string, message: ChatMessage) => void
+  setLastMessage: (chatId: string, message: ChatData) => void
 }

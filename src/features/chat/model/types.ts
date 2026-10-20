@@ -39,3 +39,8 @@ export type ReceiveNotification = {
       }
   }
 }
+
+export type ChatTitleSource = {
+  selectedChat?: string
+  displayName?: string
+}

@@ -1,35 +1,33 @@
-import { useEffect, useState } from 'react'
+import { useCallback, useState } from 'react'
 import { MessageInput } from '@/shared/ui/MessageInput'
 import { useSendMessage } from '../model/use-send-message'
-import { useMainStore } from '@/entities/max/model/store'
-import { useReceiveNotification } from '../model/use-receive-notification'
-import { useDeleteNotification } from '../model/use-delete-notification'
+import { useMainStore } from '@/entities/chat/model/store'
 import { WindowChat } from '@/shared/ui/WindowChat'
-import { formatTimeFromTimestamp } from '@/shared/utils/format-time'
 import { Popup } from '@/shared/ui/Popup'
+import { getChatTitle } from '../model/get-chat-title'
+import { useChatNotifications } from '../model/use-notification'
 import { DEFAULT_ERROR } from '@/shared/constants'
-import { TITLE } from './constants'
 import styles from './chat.module.scss'
+import type { ChatMessage } from '@/entities/chat/model/types'
+
+const EMPTY_MESSAGES: ChatMessage[] = []
 
 export const Chat = () => {
   const [isOpenError, setIsOpenError] = useState(false)
   const selectedChat = useMainStore((state) => state.selectedChat)
-  const chatMessages = useMainStore((state) => state.chatMessages)
-  const lastMessageData  = useMainStore((state) => state.lastMessageData)
+  const messages = useMainStore((state) =>
+    selectedChat ? state.chatMessages?.[selectedChat] : undefined
+  )
   const addMessage = useMainStore((state) => state.addMessage)
-  const updateStore = useMainStore((state) => state.updateStore)
-  const mainTitle = selectedChat && lastMessageData?.[selectedChat] ?
-   `${TITLE} ${lastMessageData[selectedChat]?.name}` :
-      selectedChat ? 
-        `${TITLE} ${selectedChat}` :
-          TITLE
+  const displayName = useMainStore((state) =>
+    selectedChat ? state.lastMessageData?.[selectedChat]?.name : undefined
+  )
+  const mainTitle = getChatTitle({ selectedChat, displayName })
   const {mutate: sendMessage, isPending} = useSendMessage()
-  const {refetch: receiveNotification, data: receiverData,
-    isSuccess: isSuccessReceiver} = useReceiveNotification()
-  const { mutate: deleteNotification } = useDeleteNotification()
   const isDisabledSendMessage = isPending || !selectedChat
+  useChatNotifications(selectedChat)
 
-  const handleSendMessage = (message: string) => {
+  const handleSendMessage = useCallback((message: string) => {
     if (!selectedChat) return
 
     sendMessage(message, {
@@ -44,41 +42,7 @@ export const Chat = () => {
         setIsOpenError(true)
       }
     })
-  }
-
-  useEffect(() => {
-    if (selectedChat) {
-      receiveNotification()
-    }
-  }, [selectedChat, receiveNotification])
-
-  useEffect(() => {
-    if (isSuccessReceiver) {
-      if (receiverData?.receiptId && selectedChat) {
-        const body = receiverData.body
-        const sender = body.senderData
-        if (sender.sender === selectedChat && body.messageData.textMessageData) {
-          const message = body.messageData.textMessageData.textMessage
-          addMessage(selectedChat, {
-            id: Number(body.idMessage),
-            message,
-            isMe: false
-          })
-          updateStore({lastMessageData: {
-            ...lastMessageData,
-            [selectedChat]: {
-              name: sender.chatName,
-              lastMessageTime: formatTimeFromTimestamp(body.timestamp * 1000),
-              lastMessage: message
-            }
-          }})
-        }
-        if (sender.chatId === selectedChat || sender.chatType !== 'user') {
-          deleteNotification(receiverData?.receiptId)
-        }
-      }
-    }
-  }, [isSuccessReceiver, deleteNotification, receiverData, selectedChat, addMessage, updateStore])
+  }, [selectedChat, sendMessage, addMessage])
 
   return (
     <main className={styles.main}>
@@ -87,7 +51,7 @@ export const Chat = () => {
       </header>
       <div className={styles.mainContent}>
         <WindowChat
-          messages={chatMessages && selectedChat ? chatMessages[selectedChat] : []}
+          messages={messages || EMPTY_MESSAGES}
         />
       </div>
       <div className={styles.message}>
