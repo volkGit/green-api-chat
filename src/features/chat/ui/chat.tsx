@@ -50,7 +50,7 @@ export const Chat = () => {
     if (selectedChat) {
       receiveNotification()
     }
-  }, [selectedChat])
+  }, [selectedChat, receiveNotification])
 
   useEffect(() => {
     if (isSuccessReceiver) {
@@ -78,7 +78,7 @@ export const Chat = () => {
         }
       }
     }
-  }, [isSuccessReceiver, deleteNotification, receiverData, selectedChat])
+  }, [isSuccessReceiver, deleteNotification, receiverData, selectedChat, addMessage, updateStore])
 
   return (
     <main className={styles.main}>
