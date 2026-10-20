@@ -73,7 +73,7 @@ export const Chat = () => {
             }
           }})
         }
-        if (sender.chatId === selectedChat || sender.chatType === 'group') {
+        if (sender.chatId === selectedChat || sender.chatType !== 'user') {
           deleteNotification(receiverData?.receiptId)
         }
       }
