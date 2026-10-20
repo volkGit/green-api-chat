@@ -1,0 +1,29 @@
+@use '@/app/styles/variables' as *;
+
+.page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $color-white;
+  padding: $padding-card;
+}
+
+.card {
+  width: $width-card;
+  max-width: 100%;
+  background-color: $color-white;
+  border: $border-width-card solid $color-border-card;
+  border-radius: $border-radius-card;
+  box-shadow: $shadow-card;
+  padding: $padding-content;
+}
+
+.title {
+  font-size: $font-size-title;
+  line-height: $line-height-title;
+  color: $color-text-dark;
+  font-weight: 600;
+  margin: 0 0 $margin-bottom-title 0;
+  text-align: center;
+}

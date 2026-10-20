@@ -1,0 +1,119 @@
+@use '@/app/styles/variables' as *;
+
+.button {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color $transition-duration $transition-timing,
+              transform $transition-duration $transition-timing,
+              box-shadow $transition-duration $transition-timing;
+  padding: 0;
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    background-color: currentColor;
+    border-radius: 2px;
+  }
+
+  &::before {
+    width: $icon-length-md;
+    height: $icon-thickness-md;
+  }
+
+  &::after {
+    width: $icon-thickness-md;
+    height: $icon-length-md;
+  }
+
+  &:active:not(:disabled) {
+    transform: scale(0.92);
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}
+
+.size-sm {
+  width: $size-sm;
+  height: $size-sm;
+  box-shadow: $shadow-sm;
+
+  &::before {
+    width: $icon-length-sm;
+    height: $icon-thickness-sm;
+  }
+
+  &::after {
+    width: $icon-thickness-sm;
+    height: $icon-length-sm;
+  }
+
+  &:hover:not(:disabled) {
+    box-shadow: $shadow-hover-sm;
+  }
+}
+
+.size-md {
+  width: $size-md;
+  height: $size-md;
+  box-shadow: $shadow-md;
+
+  &:hover:not(:disabled) {
+    box-shadow: $shadow-hover-md;
+  }
+}
+
+.size-lg {
+  width: $size-lg;
+  height: $size-lg;
+  box-shadow: $shadow-lg;
+
+  &::before {
+    width: $icon-length-lg;
+    height: $icon-thickness-lg;
+  }
+
+  &::after {
+    width: $icon-thickness-lg;
+    height: $icon-length-lg;
+  }
+
+  &:hover:not(:disabled) {
+    box-shadow: $shadow-hover-lg;
+  }
+}
+
+.primary {
+  background-color: $color-primary;
+  color: $color-white;
+
+  &:hover:not(:disabled) {
+    background-color: darken($color-primary, 8%);
+  }
+}
+
+.warning {
+  background-color: $color-warning;
+  color: $color-text-dark;
+
+  &:hover:not(:disabled) {
+    background-color: darken($color-warning, 8%);
+  }
+}
+
+.danger {
+  background-color: $color-danger;
+  color: $color-white;
+
+  &:hover:not(:disabled) {
+    background-color: darken($color-danger, 8%);
+  }
+}

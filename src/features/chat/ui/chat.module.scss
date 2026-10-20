@@ -1,0 +1,38 @@
+@use '@/app/styles/variables' as *;
+
+.main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.mainHeader {
+  height: $height-header;
+  min-height: $height-header;
+  display: flex;
+  align-items: center;
+  padding: $padding-header;
+  background-color: $color-white;
+  border-bottom: $border-width solid $color-border;
+  box-shadow: $shadow-header;
+  z-index: $z-index-header;
+}
+
+.mainTitle {
+  font-size: $font-size-title;
+  line-height: $line-height-title;
+  color: $color-text-dark;
+  font-weight: 600;
+  margin: 0;
+}
+
+.mainContent {
+  flex: 1;
+  overflow-y: auto;
+  padding: $padding-content;
+}
+
+.message {
+  padding: $padding-content;
+}

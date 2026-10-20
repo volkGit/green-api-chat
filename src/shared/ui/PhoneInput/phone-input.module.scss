@@ -1,0 +1,32 @@
+@use '@/app/styles/variables' as *;
+
+.input {
+  width: 100%;
+  padding: $phone-input-padding-y $phone-input-padding-x;
+  font-size: $phone-input-font-size;
+  line-height: $phone-input-line-height;
+  color: $phone-input-color;
+  background-color: $color-white;
+  border: $phone-input-border-width solid $phone-input-border-color;
+  border-radius: $phone-input-border-radius;
+  outline: none;
+  transition: $phone-input-transition;
+
+  &:hover {
+    border-color: $phone-input-border-color-hover;
+  }
+
+  &:focus {
+    border-color: $phone-input-border-color-focus;
+    box-shadow: $phone-input-focus-shadow;
+  }
+
+  &::placeholder {
+    color: $phone-input-border-color-hover;
+  }
+
+  &:disabled {
+    background-color: $color-background-hover;
+    cursor: not-allowed;
+  }
+}

@@ -1,0 +1,72 @@
+@use '@/app/styles/variables' as *;
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+  font-family: inherit;
+  transition: background-color $transition-duration $transition-timing,
+              transform $transition-duration $transition-timing;
+  user-select: none;
+  white-space: nowrap;
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  &:active:not(:disabled) {
+    transform: scale(0.97);
+  }
+}
+
+.size-sm {
+  padding: $padding-sm;
+  font-size: $font-size-sm;
+  line-height: $line-height-sm;
+  border-radius: $border-radius-sm;
+}
+
+.size-md {
+  padding: $padding-md;
+  font-size: $font-size-md;
+  line-height: $line-height-md;
+  border-radius: $border-radius-md;
+}
+
+.size-lg {
+  padding: $padding-lg;
+  font-size: $font-size-lg;
+  line-height: $line-height-lg;
+  border-radius: $border-radius-lg;
+}
+
+.primary {
+  background-color: $color-primary;
+  color: $color-white;
+
+  &:hover:not(:disabled) {
+    background-color: darken($color-primary, 8%);
+  }
+}
+
+.warning {
+  background-color: $color-warning;
+  color: $color-text-dark;
+
+  &:hover:not(:disabled) {
+    background-color: darken($color-warning, 8%);
+  }
+}
+
+.danger {
+  background-color: $color-danger;
+  color: $color-white;
+
+  &:hover:not(:disabled) {
+    background-color: darken($color-danger, 8%);
+  }
+}

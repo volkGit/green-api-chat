@@ -1,0 +1,57 @@
+@use '@/app/styles/variables' as *;
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: $color-overlay;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: $z-index-popup;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity $transition-duration $transition-timing,
+              visibility $transition-duration $transition-timing;
+
+  &.isOpen {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+.popup {
+  background-color: $color-white;
+  border-radius: $border-radius-popup;
+  width: $width-popup;
+  max-width: $max-width-popup;
+  padding: $padding-content;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+  transform: scale(0.9);
+  transition: transform $transition-duration $transition-timing;
+
+  .isOpen & {
+    transform: scale(1);
+  }
+}
+
+.title {
+  font-size: $font-size-title;
+  line-height: $line-height-title;
+  color: $color-text-dark;
+  font-weight: 600;
+  margin-bottom: $margin-bottom-16;
+}
+
+.content {
+  padding: $padding-content-popup;
+  font-size: $font-size-content;
+  line-height: $line-height-content;
+  color: $color-text-dark;
+}
+
+.button {
+  width: 100%;
+}

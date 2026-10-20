@@ -1,0 +1,5 @@
+export const SIDEBAR_TITLE = 'Чаты'
+export const BUTTON_ADD_CHAT = 'Добавить чат'
+export const MAIN_TITLE = 'Чаты'
+export const SEARCH_PHONE = 'Найти по номеру'
+export const ERROR = 'Чат с таким номером уже существует или не найден'

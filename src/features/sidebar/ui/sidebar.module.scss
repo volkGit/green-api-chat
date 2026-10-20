@@ -1,0 +1,64 @@
+@use '@/app/styles/variables' as *;
+
+.sidebar {
+  width: $width-sidebar;
+  min-width: $width-sidebar;
+  display: flex;
+  flex-direction: column;
+  background-color: $color-background-page;
+  border-right: $border-width solid $color-border;
+  box-shadow: $shadow-sidebar;
+}
+
+.sidebarHeader {
+  height: $height-header;
+  min-height: $height-header;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: $padding-header;
+  background-color: $color-white;
+  border-bottom: $border-width solid $color-border;
+  box-shadow: $shadow-header;
+  z-index: $z-index-header;
+}
+
+.sidebarTitle {
+  font-size: $font-size-title;
+  line-height: $line-height-title;
+  color: $color-text-dark;
+  font-weight: 600;
+  margin: 0;
+}
+
+.sidebarContent {
+  flex: 1;
+  overflow-y: auto;
+  background-color: $color-white;
+}
+
+.chat {
+  padding: $padding-content;
+  border-bottom: $border-width solid $color-border;
+  min-height: $min-height-chat;
+  cursor: pointer;
+}
+
+.chat-selected {
+  background-color: $color-selected-chat;
+}
+
+.chat-description {
+  .name {
+    font-weight: 600;
+    color: $color-black;
+    font-size: $font-size-title;
+  }
+  display: flex;
+  justify-content: space-between;
+  color: $color-text-secondary;
+}
+
+.color-secondary {
+  color: $color-text-secondary;
+}

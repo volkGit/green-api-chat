@@ -1,0 +1,84 @@
+@use '@/app/styles/variables' as *;
+
+.container {
+  display: flex;
+  align-items: flex-end;
+  gap: $gap;
+  background-color: $color-white;
+  border: 1px solid $color-border;
+  border-radius: $border-radius-container;
+  padding: $padding-input;
+  transition: border-color $transition-duration $transition-timing;
+
+  &:focus-within {
+    border-color: $color-primary;
+  }
+}
+
+.textarea {
+  flex: 1;
+  min-height: $height-min;
+  max-height: $height-max;
+  padding: 0;
+  font-size: $font-size-input;
+  line-height: $line-height-input;
+  color: $color-text-dark;
+  background: transparent;
+  border: none;
+  outline: none;
+  resize: none;
+  font-family: inherit;
+  overflow-y: auto;
+
+  &::placeholder {
+    color: $color-text-secondary;
+  }
+
+  &::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: $color-border;
+    border-radius: 3px;
+  }
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: $size-button;
+  height: $size-button;
+  min-height: $size-button;
+  padding: $padding-button;
+  background-color: $color-primary;
+  border: none;
+  border-radius: $border-radius-button;
+  cursor: pointer;
+  transition: background-color $transition-duration $transition-timing,
+              transform $transition-duration $transition-timing;
+
+  &:hover:not(:disabled) {
+    background-color: $color-primary-hover;
+  }
+
+  &:active:not(:disabled) {
+    transform: scale(0.92);
+  }
+
+  &:disabled {
+    background-color: $color-border-card;
+    cursor: not-allowed;
+  }
+}
+
+.icon {
+  width: 18px;
+  height: 18px;
+  fill: $color-white;
+}
+
+.disabled .icon {
+  fill: $color-text-secondary;
+}

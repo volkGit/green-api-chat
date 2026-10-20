@@ -1,0 +1,7 @@
+@use '@/app/styles/variables' as *;
+
+.form-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: $margin-bottom-title;
+}

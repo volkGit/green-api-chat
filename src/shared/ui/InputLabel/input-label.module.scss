@@ -1,0 +1,60 @@
+@use '@/app/styles/variables' as *;
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.label {
+  font-size: $font-size-label;
+  line-height: $line-height-label;
+  color: $color-text-label;
+  font-weight: 500;
+  padding: $padding-label;
+}
+
+.input {
+  width: 100%;
+  padding: $padding-input;
+  font-size: $font-size-input;
+  line-height: $line-height-input;
+  color: $color-text-dark;
+  background-color: $color-white;
+  border: $border-width solid $color-border;
+  border-radius: $border-radius-input;
+  outline: none;
+  transition: border-color $transition-duration $transition-timing,
+              box-shadow $transition-duration $transition-timing;
+  font-family: inherit;
+
+  &::placeholder {
+    color: $color-text-secondary;
+  }
+
+  &:focus {
+    border-color: $color-primary;
+    box-shadow: 0 0 0 3px rgba($color-primary, 0.1);
+  }
+
+  &:disabled {
+    background-color: $color-background-disabled;
+    cursor: not-allowed;
+  }
+}
+
+.error {
+  border-color: $color-danger;
+
+  &:focus {
+    border-color: $color-danger;
+    box-shadow: 0 0 0 3px rgba($color-danger, 0.1);
+  }
+}
+
+.errorMessage {
+  font-size: $font-size-error;
+  line-height: $line-height-error;
+  color: $color-danger;
+  margin: $margin-error;
+}

@@ -1,0 +1,44 @@
+@use '@/app/styles/variables' as *;
+
+.chat {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background-color: $color-white;
+  padding: $padding-chat;
+}
+
+.message {
+  display: flex;
+  flex-direction: column;
+  max-width: $max-width-message;
+  margin: $margin-message;
+}
+
+.me {
+  align-self: flex-end;
+
+  .bubble {
+    background-color: $color-primary;
+    color: $color-white;
+    border-radius: $border-radius-me;
+  }
+}
+
+.other {
+  align-self: flex-start;
+
+  .bubble {
+    background-color: $color-white;
+    color: $color-text-dark;
+    border: 1px solid $color-border;
+    border-radius: $border-radius-other;
+  }
+}
+
+.bubble {
+  padding: $padding-message;
+  font-size: $font-size-message;
+  line-height: $line-height-message;
+  overflow-wrap: break-word;
+}

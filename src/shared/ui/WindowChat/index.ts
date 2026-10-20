@@ -1,0 +1,1 @@
+export { WindowChat } from './window-chat'

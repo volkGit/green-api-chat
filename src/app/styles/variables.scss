@@ -1,0 +1,157 @@
+$color-background-page: #efefef;
+$color-border-card: #d1d1d6;
+$color-selected-chat: #ebebec;
+$color-text-secondary: #8e8e93;
+$color-primary: #007aff;
+$color-primary-hover: #0066d6;
+$color-warning: #ffcc00;
+$color-danger: #ff3b30;
+$color-white: #ffffff;
+$color-black: #000000;
+$color-text-dark: #1c1c1e;
+$color-background-hover: #f5f5f5;
+$color-border: #e5e5e5;
+$color-background-disabled: #f2f2f7;
+$color-text-label: #3c3c43;
+$phone-input-color: #333;
+$phone-input-border-color: #ccc;
+$phone-input-border-color-hover: #999;
+$phone-input-border-color-focus: #007bff;
+$phone-input-focus-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+
+$width-sidebar: 400px;
+$height-header: 80px;
+
+$width-card: 600px;
+$padding-card: 40px;
+$max-width-button-auth: 200px;
+$min-height-chat: 100px;
+
+$padding-header: 0 24px;
+$padding-content: 24px;
+$padding-sm: 6px 12px;
+$padding-md: 10px 20px;
+$padding-lg: 14px 28px;
+$padding-input: 12px 16px;
+$padding-label: 0 0 8px 0;
+$padding-header-popup: 0 0 16px 0;
+$padding-content-popup: 24px 0 24px 0;
+$padding-footer: 16px 0 0 0;
+
+$font-size-sm: 12px;
+$font-size-md: 14px;
+$font-size-lg: 16px;
+$font-size-input: 16px;
+$font-size-label: 14px;
+$font-size-error: 12px;
+$font-size-title: 20px;
+$font-size-content: 16px;
+$font-size-button: 16px;
+
+$line-height-sm: 16px;
+$line-height-md: 20px;
+$line-height-lg: 24px;
+$line-height-input: 24px;
+$line-height-label: 20px;
+$line-height-error: 16px;
+$line-height-title: 28px;
+
+$border-radius-sm: 6px;
+$border-radius-md: 8px;
+$border-radius-lg: 10px;
+$border-radius-input: 8px;
+$border-width: 1px;
+$border-radius-card: 12px;
+$border-width-card: 1px;
+$border-radius: 0;
+
+$margin-error: 8px 0 0 0;
+$margin-bottom-title: 24px;
+$margin-bottom-16: 16px;
+
+$transition-duration: 0.2s;
+$transition-timing: ease-in-out;
+
+$shadow-card: 0 2px 8px rgba(0, 0, 0, 0.08);
+
+$shadow-header: 0 2px 4px rgba(0, 0, 0, 0.05);
+$shadow-sidebar: 2px 0 4px rgba(0, 0, 0, 0.05);
+
+$z-index-header: 10;
+
+//fabButton
+$size-sm: 40px;
+$size-md: 48px;
+$size-lg: 56px;
+
+$icon-thickness-sm: 2px;
+$icon-thickness-md: 2.5px;
+$icon-thickness-lg: 3px;
+
+$icon-length-sm: 14px;
+$icon-length-md: 18px;
+$icon-length-lg: 22px;
+
+$shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.15);
+$shadow-md: 0 4px 8px rgba(0, 0, 0, 0.15);
+$shadow-lg: 0 6px 12px rgba(0, 0, 0, 0.15);
+
+$shadow-hover-sm: 0 4px 8px rgba(0, 0, 0, 0.2);
+$shadow-hover-md: 0 6px 12px rgba(0, 0, 0, 0.2);
+$shadow-hover-lg: 0 8px 16px rgba(0, 0, 0, 0.2);
+
+//popup
+$color-overlay: rgba(0, 0, 0, 0.5);
+
+$width-popup: 400px;
+$max-width-popup: 90vw;
+
+$line-height-content: 24px;
+$line-height-button: 24px;
+
+$border-radius-popup: 12px;
+$border-radius-button: 8px;
+
+$button-height: 44px;
+
+$z-index-popup: 1000;
+
+//input message
+$height-min: 48px;
+$height-max: 200px;
+$padding-input: 12px 16px;
+$padding-button: 8px;
+$size-button: 36px;
+
+$font-size-input: 16px;
+$line-height-input: 24px;
+
+$border-radius-container: 24px;
+$border-radius-button: 50%;
+
+$gap: 8px;
+
+//chat
+$padding-chat: 16px;
+$padding-message: 12px 16px;
+$margin-message: 8px 0;
+$margin-top-time: 4px;
+
+$border-radius-me: 18px 18px 4px 18px;
+$border-radius-other: 18px 18px 18px 4px;
+
+$font-size-message: 15px;
+$line-height-message: 20px;
+$font-size-time: 11px;
+$line-height-time: 16px;
+
+$max-width-message: 70%;
+
+//phone
+$phone-input-padding-y: 12px;
+$phone-input-padding-x: 16px;
+$phone-input-font-size: 16px;
+$phone-input-line-height: 1.5;
+$phone-input-border-radius: 8px;
+$phone-input-border-width: 1px;
+$phone-input-transition: border-color 0.2s ease;
