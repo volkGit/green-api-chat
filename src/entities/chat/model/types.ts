@@ -29,6 +29,7 @@ type StoreMax = {
   lastMessageData?: LastMessageData
   chatMessages?: ChatMessages
   selectedChat?: string
+  messagesMap?: Map<number, ChatMessage>
 }
 
 export type MainStore = StoreMax & {

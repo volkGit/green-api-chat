@@ -8,9 +8,6 @@ import { getChatTitle } from '../model/get-chat-title'
 import { useChatNotifications } from '../model/use-notification'
 import { DEFAULT_ERROR } from '@/shared/constants'
 import styles from './chat.module.scss'
-import type { ChatMessage } from '@/entities/chat/model/types'
-
-const EMPTY_MESSAGES: ChatMessage[] = []
 
 export const Chat = () => {
   const [isOpenError, setIsOpenError] = useState(false)
@@ -50,9 +47,9 @@ export const Chat = () => {
         <h1 className={styles.mainTitle}>{mainTitle}</h1>
       </header>
       <div className={styles.mainContent}>
-        <WindowChat
-          messages={messages || EMPTY_MESSAGES}
-        />
+        {messages && <WindowChat
+          messages={messages}
+        />}
       </div>
       <div className={styles.message}>
         <MessageInput
